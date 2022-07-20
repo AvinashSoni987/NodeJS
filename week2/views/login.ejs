@@ -1,0 +1,37 @@
+<%- include('header',{
+    title:'Login'
+}); -%>
+
+<div class="container">
+    <h1>Login</h1>
+    <form action="" method="POST">
+        <label for="user_email">Email</label>
+        <input type="email" class="input" name="_email" id="user_email" placeholder="Enter your email">
+        <label for="user_pass">Password</label>
+        <input type="password" class="input" name="_password" id="user_pass" placeholder="Enter new password">
+        <% if(typeof error !== 'undefined'){ %>
+        <div class="err-msg"><%= error %></div><% } %>
+        <input type="submit" value="Login">
+        <div class="link"><a href="./signup">Sign Up</a></div>
+    </form>
+</div>
+
+<h2>
+    <title>Google SignIn</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body        { padding-top:70px; }
+    </style>
+</h2>
+<body>
+    <div class="container">
+        <div class="jumbotron text-center text-primary">
+            <h1><span class="fa fa-lock"></span> Social Authentication</h1>
+            <p>Login or Register with:</p>
+            <a href="/auth/google" class="btn btn-danger"><span class="fa fa-google"></span> SignIn with Google</a>
+        </div>
+    </div>
+    </body>
+
+<%- include('footer'); -%>
